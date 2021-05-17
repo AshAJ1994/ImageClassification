@@ -54,6 +54,7 @@ print("Torchvision Version: ",torchvision.__version__)
 # Finalized GAN - Real Images - 1100 training + 100 valid + 72 test : RNFL based data split for Glaucoma
 # data_dir = '/home/sysadmin/Ashish_PGAN_Validation/FINALIZED_GAN_GLAUCOMA_DATA'
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/FINALIZED_GAN_GLAUCOMA_DATA/Models/PytorchMethod1(Generic)/'
+# modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/FINALIZED_GAN_GLAUCOMA_DATA_Severity/Models/dummy_models/'
 
 # Finalized GAN - Fake Images - 50000G + 50000 N ( from 1100 G + 1100 N training: RNFL based data split for Glaucoma)
 # data_dir = '/home/sysadmin/Ashish_PGAN_Validation/FinalizedGAN_Severity_GANImages'
@@ -101,6 +102,8 @@ print("Torchvision Version: ",torchvision.__version__)
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/Model_Combinations/Model1_RNRG/Models/scratch_model/VGG/' # vgg - scratch model : 10 Epochs
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/Model_Combinations/Model1_RNRG/Models/scratch_model/VGG/20Epoch/' # vgg - scratch model : 20 Epochs
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/Model_Combinations/Model1_RNRG/Models/scratch_model/VGG/40Epoch/'  # vgg - scratch model : 40 Epochs
+# modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/Model_Combinations/Model1_RNRG/Models/scratch_model/VGG/dummy/'
+
 #Model2
 # data_dir = '/home/sysadmin/Ashish_PGAN_Validation/Model_Combinations/Model2_RNFG'
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/Model_Combinations/Model2_RNFG/Models/CAM_resnet/'
@@ -137,23 +140,36 @@ print("Torchvision Version: ",torchvision.__version__)
 # data_dir = '/home/sysadmin/Ashish_PGAN_Validation/Model_Combinations/Model4_v2_FNFG/UNet_Segmentation/classif_model/'
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/Model_Combinations/Model4_v2_FNFG/UNet_Segmentation/classif_model/Models/Resnet_finetuned/'
 
-
 # *********** GANInput_RealData_Filtered ************
-# data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/'
+data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/'
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/Models/scratch_model/20Epoch/' #20 epoch
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/Models/scratch_model/30Epoch/' #30 epoch
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/Models/scratch_model/50Epoch/' #50 epoch
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/Models/scratch_model/60Epoch/'
+modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/Models/dummy_models/'
 
 # ************ GANINput_SyntheticData_Filtered *********
-data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/'
+# data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/'
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/20Epoch/'
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/30Epoch/'
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/50Epoch/'
-modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/50Epoch_v2/' # trial 2 for 50 epoch
+# modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/50Epoch_v2/' # trial 2 for 50 epoch
 # modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/60Epoch/'
 
+# ************ GANINput_SyntheticData_Filtered-v2 600 N + 600 G (obtained after training GAN using 990 N + 862 G images) *********
+# data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2_600/'
+# modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2/Models/scratch_models/vgg/10Epoch/' #vgg scratch model 10 epochs
+# modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2/Models/scratch_models/vgg/50Epoch/' #vgg scratch model 50 epochs
+# ** early stopping trial **
+# modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2_600/dummy_early_stopping/'
 
+# ************ GANINput_SyntheticData_Filtered-v3 2000 N + 2000 G (obtained after training GAN using 990 N + 862 G images) *********
+# data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v3_2000/'
+# modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v3_2000/Models/scratch_models/vgg/50Epoch/'
+
+# ************ GANINput_SyntheticData_Filtered-v4 5000 N + 5000 G (obtained after training GAN using 990 N + 862 G images) *********
+# data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v4_5000/'
+# modelSavingPath = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v4_5000/Models/scratch_models/vgg/50Epoch/'
 
 # Models to choose from [resnet, alexnet, vgg, squeezenet, densenet, inception]
 # model_name = "resnet"
@@ -167,10 +183,10 @@ batch_size = 8
 
 # Number of epochs to train for
 # num_epochs = 10
-# num_epochs = 20
+num_epochs = 20
 # num_epochs = 30
 # num_epochs = 40
-num_epochs = 50
+# num_epochs = 50
 # num_epochs = 60
 # num_epochs = 100
 
@@ -179,8 +195,8 @@ num_epochs = 50
 feature_extract = False # usual scenario
 # feature_extract = True # for validating CAM for GAN fake images only classification
 
-# device = torch.device("cuda:0,1,2,3" if torch.cuda.is_available() else "cpu")
-device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:0,1,2,3" if torch.cuda.is_available() else "cpu")
+# device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
 
 def train_model(model, dataloaders, criterion, optimizer, num_epochs=25, is_inception=False):
     since = time.time()
@@ -189,6 +205,7 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs=25, is_ince
 
     best_model_wts = copy.deepcopy(model.state_dict())
     best_acc = 0.0
+    countOfNan = 0
 
     for epoch in range(num_epochs):
         print('Epoch {}/{}'.format(epoch, num_epochs - 1))
@@ -240,6 +257,7 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs=25, is_ince
                 running_loss += loss.item() * inputs.size(0)
                 running_corrects += torch.sum(preds == labels.data)
 
+            # print('NaN outputs found : ', countOfNan)
             epoch_loss = running_loss / len(dataloaders[phase].dataset)
             epoch_acc = running_corrects.double() / len(dataloaders[phase].dataset)
 
@@ -400,7 +418,6 @@ data_transforms = {
 }
 
 print("Initializing Datasets and Dataloaders...")
-
 image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
                                           data_transforms[x])
                   for x in ['train', 'valid', 'test']}
@@ -523,6 +540,6 @@ savedModelName = modelSavingPath+model_name+'_'+str(dataset_sizes['train'])+'_be
 
 torch.save(model_ft, savedModelName)
 
+print('model is : ', savedModelName)
 #evaluate model on test images
 evaluate_model(model_ft)
-print('model is : ', savedModelName)

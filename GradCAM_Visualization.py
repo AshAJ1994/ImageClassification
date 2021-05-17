@@ -74,17 +74,57 @@ import os
 # GANInput_SyntheticData_Filtered - Fake images - Train 600 N + 600 G
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/20Epoch/vgg_1200_bestEpoch.pt' # 20 Epoch scratch model
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/30Epoch/vgg_1200_bestEpoch.pt' # 30 epoch scratch model
-PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/50Epoch/vgg_1200_48.pt'
+# PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/50Epoch/vgg_1200_48.pt'
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/50Epoch/vgg_1200_bestEpoch.pt'
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/50Epoch_v2/vgg_1200_bestEpoch.pt'
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/50Epoch_v2/vgg_1200_30.pt'
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/60Epoch/vgg_1200_bestEpoch.pt'
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Models/scratch_model/60Epoch/vgg_1200_48.pt'
+
+#version 2 - after filtering GAN input images from real data - 862/1000 for G , 990/1000 for N
+# GANInput_SyntheticData_Filtered - V2  - Fake images - Train 600 N + 600 G ,
+# PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2_600/Models/scratch_models/vgg/10Epoch/vgg_1200_bestEpoch.pt'
+# PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2_600/Models/scratch_models/vgg/50Epoch/vgg_1200_30.pt'
+# PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2_600/Models/scratch_models/vgg/50Epoch/vgg_1200_48.pt'
+# PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2_600/Models/scratch_models/vgg/50Epoch/vgg_1200_10.pt'
+# PATH_A = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2_600/Models/scratch_models/vgg/50Epoch/vgg_1200_48.pt'
+# PATH_B = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2_600/Models/scratch_models/vgg/50Epoch/vgg_1200_30.pt'
+
+#version 3 - after filtering GAN input images from real data - 862/1000 for G , 990/1000 for N
+# GANInput_SyntheticData_Filtered - V3  - Fake images - Train 2000 N + 2000 G ,
+# PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v3_2000/Models/scratch_models/vgg/50Epoch/vgg_4000_20.pt'
+
+#version 4 - after filtering GAN input images from real data - 862/1000 for G , 990/1000 for N
+# GANInput_SyntheticData_Filtered - V4  - Fake images - Train 5000 N + 5000 G ,
+# PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v4_5000/Models/scratch_models/vgg/50Epoch/vgg_10000_6.pt'
+# PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v4_5000/Models/scratch_models/vgg/50Epoch/vgg_10000_20.pt'
+# PATH_B = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v4_5000/Models/scratch_models/vgg/50Epoch/vgg_10000_6.pt'
+
 # GANInput_RealData_Filtered - Real Images - Train : 600N + 600G
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/Models/scratch_model/20Epoch/vgg_1200_bestEpoch.pt'
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/Models/scratch_model/30Epoch/vgg_1200_bestEpoch.pt'
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/Models/scratch_model/50Epoch/vgg_1200_bestEpoch.pt'
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/Models/scratch_model/60Epoch/vgg_1200_bestEpoch.pt'
+# PATH_A = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/Models/scratch_model/50Epoch/vgg_1200_bestEpoch.pt'
+
+# PATH = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_30000_Images/50Epoch/earlyStopping_checkpoint.pt'
+# PATH = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_5000_Images/50Epoch/earlyStopping_checkpoint.pt'
+# PATH = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_5000_Images/60Epoch_patience10/earlyStopping_checkpoint.pt'
+# PATH_B = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_5000_Images/50Epoch/earlyStopping_checkpoint.pt'
+# PATH_A = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_600_Images/60Epoch_patience10/earlyStopping_checkpoint.pt'
+
+#early stopping - fake model - validated on fake images
+# PATH = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_600_Images/60Epoch_patience5/Fake_Valid/earlyStopping_checkpoint.pt'
+PATH_A = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_600_Images/60Epoch_patience5/Fake_Valid/earlyStopping_checkpoint.pt'
+# PATH = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_5000_Images/60Epoch_Patience5/Fake_Valid/earlyStopping_checkpoint.pt'
+PATH_B = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_5000_Images/60Epoch_Patience5/Fake_Valid/earlyStopping_checkpoint.pt'
+
+# PATH = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Real_600_Images/60Epoch/earlyStopping_checkpoint.pt'
+# PATH = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Real_600_Images/60Epoch_Patience10/earlyStopping_checkpoint.pt'
+# PATH_A = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Real_600_Images/60Epoch_Patience10/earlyStopping_checkpoint.pt'
+
+# PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/Models/dummy_models/vgg_1200_bestEpoch.pt'
+PATH = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_30000_Images/60Epoch_patience5/Fake_Valid/fake_es_cp.pt'
 
 #Unet images - CAM classification
 # real images
@@ -103,6 +143,7 @@ PATH = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered/Mo
 #scratch VGG model
 # PATH = '/home/sysadmin/Ashish_PGAN_Validation/Flattened_GAN_FakeImages_Results/Models/scratch_model/vgg_10000_bestEpoch.pt'
 
+
 def imshow(inp, title=None):
     """Imshow for Tensor."""
     inp = inp.numpy().transpose((1, 2, 0))
@@ -119,12 +160,12 @@ def imshow(inp, title=None):
 # test_path = '/home/sysadmin/Ashish/ants_bees_dataset/test/'
 
 # real images - test path containing 78 images per class : RNFL based classification - (1000 G + 1000 N training)
-# test_path = '/home/sysadmin/Ashish_PGAN_Validation/FINALIZED_GAN_GLAUCOMA_DATA_Severity/test'
+test_path = '/home/sysadmin/Ashish_PGAN_Validation/FINALIZED_GAN_GLAUCOMA_DATA_Severity/test'
 
 #fake images - 78G + 78N
 # test_path = '/home/sysadmin/Ashish_PGAN_Validation/Model_Combinations/Model4_v2_FNFG/test/'
 # renamed Fake test images - 78N + 78G
-test_path = '/home/sysadmin/Ashish_PGAN_Validation/Model_Combinations/Model4_v2_FNFG/test_renamed/'
+# test_path = '/home/sysadmin/Ashish_PGAN_Validation/Model_Combinations/Model4_v2_FNFG/test_renamed/'
 
 #fake images - test : 2000N + 2000G , train - 50000N + 50000G
 # test_path = '/home/sysadmin/Ashish_PGAN_Validation/FInalized_GAN_basedOnSeverity_FakeOnly/test/'
@@ -168,7 +209,7 @@ test_data = CustomImageFolder(root=test_path, transform=transforms.Compose([
                                       # transforms.Normalize([0.485, 0.456, 0.406],[0.229, 0.224, 0.225])
 ]))
 print(len(test_data))
-test_data_loader = DataLoader(test_data, shuffle=True, batch_size=1, num_workers=0)
+test_data_loader = DataLoader(test_data, shuffle=False, batch_size=1, num_workers=0)
 print(dict(Counter(test_data_loader.dataset.targets)))
 
 display_transform = transforms.Compose([
@@ -186,8 +227,8 @@ imgConversion_transform = transforms.Compose([
 
 # device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-device = torch.device("cuda:3" if torch.cuda.is_available() else "cpu")
-# device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
+# device = torch.device("cuda:3" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
 # device = torch.device("cuda:0,1" if torch.cuda.is_available() else "cpu")
 # device = torch.device("cuda:0,1,2,3" if torch.cuda.is_available() else "cpu")
 
@@ -195,9 +236,20 @@ device = torch.device("cuda:3" if torch.cuda.is_available() else "cpu")
 model = torch.load(PATH)
 model = model.to(device)
 
+model_A = torch.load(PATH_A)
+model_A = model_A.to(device)
+
+model_B = torch.load(PATH_B)
+model_B = model_B.to(device)
+
 # model = model_ft.load_state_dict(PATH)
 model.eval()
 was_training = model.training
+
+model_A.eval()
+was_training = model_A.training
+model_B.eval()
+was_training = model_B.training
 
 class_names = ('glaucoma', 'normal')
 # class_names = ('ants', 'bees')
@@ -206,6 +258,16 @@ correct = 0
 total = 0
 y_true = []
 y_pred = []
+y_pred_prob = []
+
+y_true_A = []
+y_pred_A = []
+y_pred_prob_A = []
+
+y_true_B = []
+y_pred_B = []
+y_pred_prob_B = []
+
 originalLabels = []
 predictedLabels = []
 
@@ -247,7 +309,7 @@ def plot_confusion_matrix(cm, classes,
 import torch
 import torchvision
 from torchcam.cams import CAM, GradCAM, SmoothGradCAMpp
-# from pytorch_grad_cam import GradCam # pypi grad cam library
+# from pytorch_grad_cam import GrfadCam # pypi grad cam library
 
 class CAM:
     def __init__(self, model, target_layer, use_cuda=False):
@@ -366,6 +428,7 @@ class ActivationsAndGradients:
         self.activations = []
 
         target_layer.register_forward_hook(self.save_activation)
+        target_layer.register_forward_hook(self.save_activation)
         target_layer.register_backward_hook(self.save_gradient)
 
     def save_activation(self, module, input, output):
@@ -438,16 +501,21 @@ predClassVsRNFLDict = {}
 
 # with torch.no_grad():
 for images,labels,filenames in test_data_loader:
+
     images = images.to(device)
     labels = labels.to(device)
 
     images.requires_grad = True
 
     prediction = model(images)
-    pred_probabilities = F.softmax(prediction).data.cpu().squeeze()
-    pred_probabilities_sigmoid = F.sigmoid(prediction).data.cpu().squeeze()
+    # pred_probabilities = F.softmax(prediction).data.cpu().squeeze() # deprecated method
+    pred_probabilities = F.softmax(prediction, dim=1)
+    pred_probabilities_sigmoid = F.sigmoid(prediction)
     class_idx = topk(pred_probabilities, 1)[1].int()
     l = str(float("{:.2f}".format(torch.max(pred_probabilities))))
+    # val = float(torch.max(pred_probabilities_sigmoid))
+    # val = float(pred_probabilities[:,1])
+    val = float(pred_probabilities_sigmoid[:, 1])
     buf = 'predicted class :' + class_names[class_idx] + '   probability : ' + l + '  actual class : ' + class_names[
         int(labels[0])]
 
@@ -541,12 +609,38 @@ for images,labels,filenames in test_data_loader:
 
     # using pytorch official doc method for calculating loss / correct predictions
     outputs = model(images)
-    prob, preds = torch.max(outputs, 1)
+    pred_probabilities_sigmoid = F.sigmoid(outputs)
+    val = float(pred_probabilities_sigmoid[:, 1])
+    prob, preds = torch.max(outputs, 1) #doubtful
     # print('preds',preds)
     y_true += list(labels.cpu().numpy())
     y_pred += list(preds.cpu().numpy())
+    # y_pred_prob += list(prob.cpu().detach().numpy())
+    y_pred_prob.append(val)
+
     total += labels.size(0)
     correct += (preds == labels.data).sum().item()
+
+    outputs_A = model_A(images)
+    pred_probabilities_sigmoid_A = F.sigmoid(outputs_A)
+    val_A = float(pred_probabilities_sigmoid_A[:, 1])
+    prob_A, preds_A = torch.max(outputs_A, 1)
+    # print('preds',preds)
+    y_true_A += list(labels.cpu().numpy())
+    y_pred_A += list(preds.cpu().numpy())
+    # y_pred_prob_A += list(prob.cpu().detach().numpy())
+    y_pred_prob_A.append(val_A)
+
+    outputs_B = model_B(images)
+    pred_probabilities_sigmoid_B = F.sigmoid(outputs_B)
+    val_B = float(pred_probabilities_sigmoid_B[:, 1])
+    prob_B, preds_B = torch.max(outputs_B, 1)
+    # print('preds',preds)
+    y_true_B += list(labels.cpu().numpy())
+    y_pred_B += list(preds.cpu().numpy())
+    # y_pred_prob_B += list(prob.cpu().detach().numpy())
+    y_pred_prob_B.append(val_B)
+
 
     baseName = os.path.basename(filenames[0])
     predClassVsRNFLDict[baseName] = int(preds)
@@ -557,33 +651,38 @@ for images,labels,filenames in test_data_loader:
 
 import pandas as pd
 predClassVsRNFLDF = pd.DataFrame(list(predClassVsRNFLDict.items()), columns=['Image_Filename','Predicted_Class'])
-# realTestImages_unetThickness_DF = pd.read_csv('RealTestImages_UnetBasedThickness.csv',sep=',', index_col=0)
+realTestImages_unetThickness_DF = pd.read_csv('RealTestImages_UnetBasedThickness.csv',sep=',', index_col=0)
 # fakeTestImages_unetThickness_DF = pd.read_csv('FakeTestImages_UnetBasedThickness.csv', sep=',', index_col=0)
-fakeTestImages_unetThickness_DF = pd.read_csv('Renamed_FakeTestImages_UnetBasedThickness.csv', sep=',', index_col=0)
-# realImages_mergedDF = pd.merge(predClassVsRNFLDF, realTestImages_unetThickness_DF, on='Image_Filename', how='left')
-fakeImages_mergedDF = pd.merge(predClassVsRNFLDF, fakeTestImages_unetThickness_DF, how='left', on='Image_Filename')
+# fakeTestImages_unetThickness_DF = pd.read_csv('Renamed_FakeTestImages_UnetBasedThickness.csv', sep=',', index_col=0)
+realImages_mergedDF = pd.merge(predClassVsRNFLDF, realTestImages_unetThickness_DF, on='Image_Filename', how='left')
+# fakeImages_mergedDF = pd.merge(predClassVsRNFLDF, fakeTestImages_unetThickness_DF, how='left', on='Image_Filename')
 
 print('Test accuracy using Pytorch official doc method : {:0.2f} %'.format(100 * (correct / total)))
 from sklearn.metrics import roc_curve,roc_auc_score,auc
 # real images
-# fpr, tpr, thrsh = metrics.roc_curve(realImages_mergedDF['Predicted_Class'], realImages_mergedDF['Avg_RNFLThickness'], pos_label=1)
-# auc_score_predictedClass = auc(fpr, tpr)
-# fpr, tpr, thrsh = metrics.roc_curve(realImages_mergedDF['Actual_Class'], realImages_mergedDF['Avg_RNFLThickness'], pos_label=1)
-# auc_score_RealClass = auc(fpr, tpr)
-#fake images
-fpr, tpr, thrsh = metrics.roc_curve(fakeImages_mergedDF['Predicted_Class'], fakeImages_mergedDF['Avg_RNFLThickness'], pos_label=1)
+fpr, tpr, thrsh = metrics.roc_curve(realImages_mergedDF['Predicted_Class'], realImages_mergedDF['Avg_RNFLThickness'], pos_label=1)
 auc_score_predictedClass = auc(fpr, tpr)
-fpr, tpr, thrsh = metrics.roc_curve(fakeImages_mergedDF['Actual_Class'], fakeImages_mergedDF['Avg_RNFLThickness'], pos_label=1)
+fpr, tpr, thrsh = metrics.roc_curve(realImages_mergedDF['Actual_Class'], realImages_mergedDF['Avg_RNFLThickness'], pos_label=1)
 auc_score_RealClass = auc(fpr, tpr)
+#fake images
+# fpr, tpr, thrsh = metrics.roc_curve(fakeImages_mergedDF['Predicted_Class'], fakeImages_mergedDF['Avg_RNFLThickness'], pos_label=1)
+# auc_score_predictedClass = auc(fpr, tpr)
+# fpr, tpr, thrsh = metrics.roc_curve(fakeImages_mergedDF['Actual_Class'], fakeImages_mergedDF['Avg_RNFLThickness'], pos_label=1)
+# auc_score_RealClass = auc(fpr, tpr)
 
 # evaluation metrics
-print(metrics.accuracy_score(y_true, y_pred))
+# print(metrics.accuracy_score(y_true, y_pred))
+print('AUC score from predict probabilities', metrics.roc_auc_score(y_true, y_pred_prob))
 # print(metrics.accuracy_score(realImages_mergedDF['Actual_Class'], realImages_mergedDF['Predicted_Class']))
-print(metrics.accuracy_score(fakeImages_mergedDF['Actual_Class'], fakeImages_mergedDF['Predicted_Class']))
+# print(metrics.accuracy_score(fakeImages_mergedDF['Actual_Class'], fakeImages_mergedDF['Predicted_Class']))
+
+print('AUC score from predict probabilities - Model A', metrics.roc_auc_score(y_true, y_pred_prob_A))
+print('AUC score from predict probabilities - Model B', metrics.roc_auc_score(y_true, y_pred_prob_B))
 
 from sklearn.metrics import classification_report
 
 print(classification_report(y_true, y_pred, target_names=['glaucoma', 'normal']))
+
 # print(classification_report(y_true,y_pred,target_names=['ants', 'bees']))
 # print(classification_report(originalLabels,predictedLabels,labels=labels))
 
@@ -609,7 +708,7 @@ print('Test images path :', test_path)
 # print('ROC score:', roc_auc_score(y_true, y_pred))
 plt.figure()
 plot_confusion_matrix(cnf_matrx, classes=['glaucoma', 'normal'])
-plt.show()
+# plt.show()
 
 print('')
 

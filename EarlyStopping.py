@@ -20,7 +20,11 @@ model_name = "vgg"
 num_classes = 2
 
 # Batch size for training (change depending on how much memory you have)
-batch_size = 8
+batch_size = 4
+# batch_size = 8
+# batch_size = 16
+# batch_size = 32
+# batch_size = 64
 
 # Number of epochs to train for
 # num_epochs = 10
@@ -150,15 +154,17 @@ data_transforms = {
 # data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANInput_RealData_Filtered/' # 600 N + 600 G
 
 # Dataset directory path for Fake Images classification
-# data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2_600/' # 600 N + 600G
+data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v2_600/' # 600 N + 600G
 # data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v4_5000' # 5000 N + 5000 G
-data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v5_30000' # 30000 N + 30000 G
+# data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v5_30000' # 30000 N + 30000 G
+# data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v6_5000/' # 2nd trial - 5000N 5000G
+# data_dir = '/home/sysadmin/Ashish_PGAN_Validation/GANINput_SyntheticData_Filtered_v7_100000/' # 100000 N + 100000 G
 
 print("Initializing Datasets and Dataloaders...")
 image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
                                           data_transforms[x])
                   for x in ['train', 'valid', 'test']}
-dataloaders_dict = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=4,
+dataloaders_dict = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=batch_size,
                                              shuffle=True, num_workers=0)
               for x in ['train', 'valid', 'test']}
 dataset_sizes = {x: len(image_datasets[x]) for x in ['train', 'valid', 'test']}
@@ -200,6 +206,9 @@ from pytorchtools import EarlyStopping
 # to detect NaN values
 # torch.autograd.set_detect_anomaly(True)
 
+patience = 5
+# patience = 10
+
 def train_model(model, dataloaders, criterion, optimizer, num_epochs=25, patience=5, is_inception=False):
     since = time.time()
 
@@ -214,6 +223,9 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs=25, patienc
     # Early stopping checkpoint for REAL images
     # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Real_600_Images/60Epoch/earlyStopping_checkpoint.pt'
     # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Real_600_Images/60Epoch_Patience10/earlyStopping_checkpoint.pt'
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Real_600_Images/60Epoch_BS8_P5/real_es_cp.pt' # batch size 8
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Real_600_Images/60Epoch_BS4_P5/real_es_cp.pt' #batch size - 4
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Real_600_Images/60Epoch_BS4_P10/real_es_cp.pt'
 
     # Early stopping checkpoint for FAKE images
     # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_600_Images/10Epoch/earlyStopping_checkpoint.pt'
@@ -225,11 +237,31 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs=25, patienc
     # Early stopping checkpoint for FAKE images - Synthetic Validation Images
     # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_600_Images/60Epoch_patience10/Real_Valid/earlyStopping_checkpoint.pt'
     # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_5000_Images/60Epoch_Patience5/Fake_Valid/earlyStopping_checkpoint.pt'
-    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_30000_Images/60Epoch_patience5/Real_Valid/es_cp.pt'
-    earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_30000_Images/60Epoch_patience5/Fake_Valid/fake_es_cp.pt'
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_5000_Images/60Ep_BatchSize16_patience5/Real_Valid/real_es_cp.pt' #patience -5
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_5000_Images/60Ep_BatchSize16_patience10/Real_Valid/real_es_cp.pt' #patience -10
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_5000_Images/60Ep_BatchSize16_patience5/Fake_Valid/fake_es_cp.pt' #patience -5
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_30000_Images/60Epoch_patience5/Real_Valid/es_cp.pt' # batch size - 4
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_30000_Images/60Epoch_patience5/Fake_Valid/fake_es_cp.pt' # batch size - 4
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_30000_Images/60Ep_BatchSize16_patience5/Real_Valid/real_es_cp.pt'
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_30000_Images/60Ep_BatchSize16_patience5/Fake_Valid/fake_es_cp.pt'
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_30000_Images/60Ep_BatchSize32_patience5/Fake_Valid/fake_es_cp.pt'
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_30000_Images/60Ep_BatchSize32_patience5/Real_Valid/real_es_cp.pt'
+
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_5000_Images_v2/60Epoch_BS16_P5/Real_Valid/real_es_cp.pt'
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_5000_Images_v2/60Epoch_BS16_P5/Fake_Valid/fake_es_cp.pt'
+
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_600_Images/60Epoch_BS4_P10/Real_Valid/real_es_cp.pt'
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_600_Images/60Epoch_BS4_P10/Fake_Valid/fake_es_cp.pt'
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_600_Images/60Epoch_BS4_P10_v2/Real_Valid/real_es_cp.pt' # v2 - real of above
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_600_Images/60Epoch_BS4_P10_v2/Fake_Valid/fake_es_cp.pt'
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_600_Images/60Epoch_BS4_P10_v3/Fake_Valid/fake_es_cp.pt'
+    earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_600_Images/60Epoch_BS4_P5_v4/Fake_Valid/fake_es_cp.pt'
+
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_100000_Images/60Epoch_BS16_P10/Real_Valid/real_es_cp.pt' # batch size 16
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_100000_Images/60Epoch_BS16_P10/Fake_Valid/fake_es_cp.pt' # batch size 16
+    # earlyStopping_checkPointPath = '/home/sysadmin/PycharmProjects/ImageClassification/EarlyStopping_Results/Fake_100000_Images/60Epoch_BS64_P10/Real_Valid/real_es_cp.pt' # batch size 64
 
     # initialize the early_stopping object
-    patience = 5
     early_stopping = EarlyStopping(patience=patience, verbose=True, path=earlyStopping_checkPointPath)
 
     try:
@@ -335,7 +367,7 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs=25, patienc
     return model, train_acc_history, train_loss_history, val_acc_history, val_loss_history
 
 # Train and evaluate
-model_ft, train_accuracy, train_loss, valid_accuracy, valid_loss = train_model(model_ft, dataloaders_dict, criterion, optimizer_ft, num_epochs=num_epochs,patience=5, is_inception=(model_name=="inception"))
+model_ft, train_accuracy, train_loss, valid_accuracy, valid_loss = train_model(model_ft, dataloaders_dict, criterion, optimizer_ft, num_epochs=num_epochs,patience=patience, is_inception=(model_name=="inception"))
 
 # visualize the loss as the network trained
 fig = plt.figure(figsize=(10,8))
@@ -346,7 +378,7 @@ minposs = valid_loss.index(min(valid_loss))+1
 plt.axvline(minposs, linestyle='--', color='r',label='Early Stopping Checkpoint')
 plt.xlabel('epochs')
 plt.ylabel('loss')
-plt.ylim(0, 1) # consistent scale
+# plt.ylim(0, 1) # consistent scale
 plt.xlim(0, len(train_loss)+1) # consistent scale
 plt.grid(True)
 plt.legend()
